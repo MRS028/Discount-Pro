@@ -1,0 +1,354 @@
+[
+  {
+    "_id": "1a2b3c4d5e",
+    "brand_name": "Daraz",
+    "rating": 4.5,
+    "description": "Get the best all deals.",
+    "brand_logo": "https://logos-world.net/wp-content/uploads/2022/05/Daraz-Logo.png",
+    "shop_Link": "https://www.daraz.com.bd/#?",
+    "category": "Electronics,Goods",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "DARAZ20",
+        "description": "20% off on all Cloths",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $100",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "DARAZ400",
+        "description": "40% off on all gadgets",
+        "expiry_date": "2025-05-15",
+        "condition": "Minimum purchase of $600",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIP",
+        "description": "Free shipping on all orders",
+        "expiry_date": "2024-12-16",
+        "condition": "No minimum purchase",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "details": "Daraz is one of the largest online marketplaces offering a variety of products. It specializes in electronics, gadgets, and everyday essentials. Their seasonal sales attract millions of buyers. Known for fast delivery and customer satisfaction. A go-to platform for tech enthusiasts."
+  },
+  {
+    "_id": "2f3g4h5i6j",
+    "brand_name": "Bata",
+    "rating": 4.2,
+    "description": "Trendy fashion for all seasons.",
+    "brand_logo": "https://logoeps.com/wp-content/uploads/2013/01/bata-logo-vector.png",
+    "shop_Link": "https://bata.com",
+    "category": "shoe",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "SHOE15",
+        "description": "15% off on new arrivals",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid on selected items only",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Bata is a trusted name in footwear with a global presence. It offers stylish and comfortable shoes for all age groups. Bata is known for blending tradition with modern trends. Their products are durable and affordable. Perfect choice for everyday and formal wear."
+  },
+  {
+    "_id": "3h4i5j6k7l",
+    "brand_name": "Foodpanda",
+    "rating": 4.8,
+    "description": "Delicious meals delivered to your door.",
+    "brand_logo": "https://www.foodpanda.com/wp-content/uploads/2024/05/foodpanda-logo-RGB-stacked.png",
+    "shop_Link": "https://foodpanda.com",
+    "category": "Food",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "MEAL50",
+        "description": "50% off on first meal",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable for new users only",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "DRINKFREE",
+        "description": "Get a free drink with every order",
+        "expiry_date": "2024-11-25",
+        "condition": "Minimum purchase of $30",
+        "coupon_type": "Bonus"
+      },
+      {
+        "coupon_code": "PANDA150",
+        "description": "Get a free drink with every order",
+        "expiry_date": "2024-12-25",
+        "condition": "Minimum purchase of $100",
+        "coupon_type": "Bonus"
+      }
+    ],
+    "details": "Foodpanda delivers fresh, delicious meals to your door. It connects you with local and international food chains. Offers regular discounts and exclusive meal deals. A favorite among foodies who love convenience. Great service for dining at home."
+  },
+  {
+    "_id": "4k5l6m7n8o",
+    "brand_name": "Rokomari",
+    "rating": 4.6,
+    "description": "Your gateway to endless knowledge.",
+    "brand_logo": "https://techshohor.com/wp-content/uploads/2013/10/Rokomari-Logo_-Tech-Shohor.jpg",
+    "shop_Link": "https://www.rokomari.com/book",
+    "category": "Books",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "READ25",
+        "description": "25% off on all books",
+        "expiry_date": "2024-12-31",
+        "condition": "No minimum purchase",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Rokomari is a top platform for book lovers in Bangladesh. It features a vast collection of local and international titles. Perfect for academic, professional, and leisure reading. Known for their quick delivery and reliable service. A hub of knowledge and inspiration."
+  },
+  {
+    "_id": "5m6n7o8p9q",
+    "brand_name": "IndiaMart",
+    "rating": 4.9,
+    "description": "Premium fitness gear and supplements.",
+    "brand_logo": "https://i.ibb.co.com/LxpBDKy/Indiamart-Logo.png",
+    "shop_Link": "https://www.indiamart.com/",
+    "category": "Health & Fitness",
+    "isSaleOn": false,
+    "coupons": [
+      {
+        "coupon_code": "MSI Gaming",
+        "description": "10% off on all orders",
+        "expiry_date": "2024-11-30",
+        "condition": "Minimum purchase of $50",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "IndiaMart is a marketplace for health and fitness gear. It offers premium products for fitness enthusiasts. Focused on quality and innovative designs. Popular for supplements and sports equipment. Your ultimate fitness companion."
+  },
+  {
+    "_id": "6o7p8q9r0s",
+    "brand_name": "GamerZone",
+    "rating": 4.3,
+    "description": "Exclusive deals for gamers.",
+    "brand_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN_IDNO5DqZiheF-gQfUAoGHbWss4-F_m6lA&s",
+    "shop_Link": "https://gamerzone.com",
+    "category": "Gaming",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "GAME30",
+        "description": "30% off on all games",
+        "expiry_date": "2024-12-01",
+        "condition": "No restrictions",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "GamerZone is dedicated to gaming enthusiasts. Offers exclusive deals on games, consoles, and accessories. A paradise for hardcore and casual gamers alike. Known for premium customer service and timely updates. The ultimate destination for gaming products."
+  },
+  {
+    "_id": "7q8r9s0t1u",
+    "brand_name": "TravelEase",
+    "rating": 4.7,
+    "description": "Making travel affordable and comfortable.",
+    "brand_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAgFdB5UuTtt76uY3v1nlYm2oUhralKnV6IA&s",
+    "shop_Link": "https://travelease.com",
+    "category": "Travel",
+    "isSaleOn": false,
+    "coupons": [
+      {
+        "coupon_code": "FLY10",
+        "description": "10% off on all flights",
+        "expiry_date": "2024-12-15",
+        "condition": "Valid for round trips only",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "TravelEase makes travel planning effortless and affordable. It specializes in comfortable and economical travel options. Offers exclusive discounts on flights and packages. A favorite for frequent travelers and vacationers. Your perfect partner for all travel needs."
+  },
+  {
+    "_id": "8s0t1u2v3w",
+    "brand_name": "ASPCA",
+    "rating": 4.5,
+    "description": "All you need for your furry friends.",
+    "brand_logo": "https://1000logos.net/wp-content/uploads/2023/02/ASPCA-logo.png",
+    "shop_Link": "https://www.aspca.org/pet-care",
+    "category": "Pets",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "PETLOVE",
+        "description": "15% off on pet supplies",
+        "expiry_date": "2024-11-30",
+        "condition": "Minimum purchase of $20",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "ASPCA provides products for pet care and wellness. It supports animal welfare and pet-friendly initiatives. Offers high-quality pet supplies and accessories. Known for affordable and reliable pet products. A trusted name among pet lovers."
+  },
+  {
+    "_id": "2b3c4d5e6f",
+    "brand_name": "Bikroy",
+    "rating": 4.3,
+    "description": "The largest buy and sell marketplace.",
+    "brand_logo": "https://i.postimg.cc/ncKD9yg7/bikroy.png",
+    "shop_Link": "https://www.bikroy.com/",
+    "category": "Electronics, Vehicles",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "SELLFAST",
+        "description": "10% off on premium ads",
+        "expiry_date": "2025-01-15",
+        "condition": "Applicable on premium ads only",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Bikroy is a trusted platform for buying and selling anything locally. From vehicles to electronics, it connects millions of users across Bangladesh."
+  },
+  {
+    "_id": "3n4o5p6q7r",
+    "brand_name": "Samsung",
+    "rating": 4.9,
+    "description": "Innovative electronics for everyday life.",
+    "brand_logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/800px-Samsung_Logo.svg.png",
+    "shop_Link": "https://www.samsung.com/",
+    "category": "Mobile, Electronics",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "SAMSUNG10",
+        "description": "10% off on smartphones",
+        "expiry_date": "2025-12-31",
+        "condition": "Minimum purchase of $300",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "SAMSUNG25",
+        "description": "25% off on smartphones",
+        "expiry_date": "2025-06-31",
+        "condition": "Minimum purchase of $1000",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Samsung is a global leader in technology, providing innovative electronics including smartphones, TVs, and home appliances."
+  },
+  {
+    "_id": "4o5p6q7r8s",
+    "brand_name": "Apple",
+    "rating": 4.8,
+    "description": "Experience the premium lifestyle with Apple.",
+    "brand_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAN6D3MaoWFSqboGZpHXxBZnqY4siyBKCX8g&s",
+    "shop_Link": "https://www.apple.com/",
+    "category": "Mobile, Computers, Accessories",
+    "isSaleOn": false,
+    "coupons": [],
+    "details": "Apple is a world-renowned brand known for its high-quality smartphones, laptops, and accessories."
+  },
+  {
+    "_id": "5p6q7r8s9t",
+    "brand_name": "Xiaomi",
+    "rating": 4.7,
+    "description": "Affordable technology for everyone.",
+    "brand_logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mi-logo-01.png/1200px-Mi-logo-01.png",
+    "shop_Link": "https://www.mi.com/",
+    "category": "Mobile, Gadgets, Accessories",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "MI15",
+        "description": "15% off on gadgets",
+        "expiry_date": "2024-11-30",
+        "condition": "Applicable on orders over $300",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Xiaomi is popular for its innovative and budget-friendly electronics, offering smartphones, smartwatches, and other gadgets."
+  },
+  {
+    "_id": "3c4d5e6f7g",
+    "brand_name": "Chaldal",
+    "rating": 4.7,
+    "description": "Your daily essentials delivered.",
+    "brand_logo": "https://upload.wikimedia.org/wikipedia/en/d/de/Chaldal.com_logo.png",
+    "shop_Link": "https://chaldal.com/",
+    "category": "Groceries, Household Items",
+    "isSaleOn": true,
+    "coupons": [
+      {
+        "coupon_code": "GROCERY10",
+        "description": "10% off on first order",
+        "expiry_date": "2024-11-30",
+        "condition": "Minimum purchase of $50",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "NEW12",
+        "description": "20% off on first order",
+        "expiry_date": "2024-11-30",
+        "condition": "For New Users Only",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "EGG20",
+        "description": "20TK off on first order",
+        "expiry_date": "2024-12-30",
+        "condition": "Minimum purchase of $40",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Chaldal is Bangladesh's largest online grocery store, delivering fresh food and household essentials to your doorstep with amazing offers."
+  },
+
+
+  {
+    "_id": "5e6f7g8h9i",
+    "brand_name": "Bagdoom",
+    "rating": 4.4,
+    "description": "Trendy and fashionable online store.",
+    "brand_logo": "https://bdyellowpages.net/upload/unnamed5.png",
+    "shop_Link": "https://bagdoom.com/",
+    "category": "Fashion, Lifestyle, Home Decor",
+    "isSaleOn": false,
+    "coupons": [
+      {
+        "coupon_code": "STYLE15",
+        "description": "15% off on fashion items",
+        "expiry_date": "2024-12-10",
+        "condition": "Minimum purchase of $75",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "EDI15",
+        "description": "15% off on fashion items",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $85",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Bagdoom offers a wide range of fashionable clothing, accessories, and home decor items for the modern lifestyle enthusiast."
+  },
+  {
+    "_id": "7g8h9i1j2k",
+    "brand_name": "Othoba",
+    "rating": 4.3,
+    "description": "Shop everything online.",
+    "brand_logo": "https://i.postimg.cc/VL9BGZV9/othoba.jpg",
+    "shop_Link": "https://www.othoba.com/",
+    "category": "Electronics, Fashion, Furniture",
+    "isSaleOn": false,
+    "coupons": [
+      {
+        "coupon_code": "OTHO10",
+        "description": "10% off on all products",
+        "expiry_date": "2025-01-15",
+        "condition": "No minimum purchase required",
+        "coupon_type": "Discount"
+      }
+    ],
+    "details": "Othoba is an emerging e-commerce platform offering diverse products with reliable delivery services across Bangladesh."
+  
+    
+    }
+]

@@ -1,16 +1,20 @@
 import React from "react";
+import logo from "/public/Images/logo.jpg";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-300 py-6">
       <div className="container mx-auto px-6">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col place-items-center md:flex-row justify-center md:justify-between items-center">
           {/* Logo and Description */}
           <div className="mb-4 md:mb-0 text-center md:text-left">
-            <h1 className="text-2xl font-bold text-white">Discount Pro</h1>
-            <p className="text-sm">
+            <Link to="/">
+              <h2 className="text-3xl  font-bold ">Discount Pro</h2>
+            </Link>
+            <p className="text-xl text-base-200 opacity-75">
               Building solutions that empower your digital presence.
             </p>
           </div>

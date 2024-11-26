@@ -1,17 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify'; 
+
 
 const Register = () => {
-  const { createNewUser, user,updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext);
+  const { createNewUser, user, updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const [passwordError, setPasswordError] = useState(""); // To hold password validation error
+  const [passwordError, setPasswordError] = useState(""); 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const validatePassword = (password) => {
-    // Regular expression for password validation
+   
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const isLengthValid = password.length >= 6;
@@ -25,7 +27,7 @@ const Register = () => {
     if (!isLengthValid) {
       return "Password must be at least 6 characters long";
     }
-    return ""; // Return empty if valid
+    return ""; 
   };
 
   const handleSubmit = (e) => {
@@ -39,40 +41,51 @@ const Register = () => {
 
     if (passwordValidationError) {
       setPasswordError(passwordValidationError);
-      return; // Don't proceed with the registration if password is invalid
+      return; 
     }
 
-    setPasswordError(""); // Clear error if password is valid
+    setPasswordError(""); 
 
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
         updateUserProfile({
-          displayName: name, photoURL : photourl,
-        }).then(()=>{
+          displayName: name, photoURL: photourl,
+        }).then(() => {
+          toast.success("Registration successful!");
+          navigate(location?.state ? location.state : "/");
           
-          navigate('/');
-
-        }).catch(err=>{
+          
+          // Success toast
+          // setTimeout(() => {
+          //   navigate('/'); 
+          // }, 2000); 
+        }).catch((err) => {
           console.log(err);
+          toast.error("Failed to update profile"); // Error toast if profile update fails
         });
-        toast.success("Registration successful!");
-         
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        toast.error("Registration failed! Please try again."); // Error toast if registration fails
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then(result => {
-        navigate('/');
+        toast.success("Google Sign-In successful!"); // Success toast
+        setTimeout(() => {
+          navigate('/'); // Navigate to home page after delay
+        }, 2000); // 2 seconds delay before navigating
       })
-      .catch(error => console.log('ERROR', error.message));
+      .catch(error => {
+        console.log('ERROR', error.message);
+        toast.error("Google Sign-In failed! Please try again."); // Error toast if Google Sign-In fails
+      });
   };
 
   return (
@@ -94,6 +107,7 @@ const Register = () => {
               name="name"
               type="text"
               id="name"
+              required 
               placeholder="Enter your name"
               className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
@@ -107,7 +121,7 @@ const Register = () => {
             >
               Email
             </label>
-            <input
+            <input required 
               type="email"
               name="email"
               id="email"
@@ -142,7 +156,7 @@ const Register = () => {
               Password
             </label>
             <div className="relative">
-              <input
+              <input required 
                 name="password"
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -188,6 +202,7 @@ const Register = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

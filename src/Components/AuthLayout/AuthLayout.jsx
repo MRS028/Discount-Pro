@@ -5,6 +5,8 @@ import Footer from '../Footer/Footer';
 
 
 const AuthLayout = () => {
+    
+   
     return (
         <>
         <div className='bg-base-200 py-3'>

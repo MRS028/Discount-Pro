@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast } from 'react-toastify'; // Importing toastify
+import { toast, ToastContainer } from 'react-toastify'; 
 
 const Login = () => {
   useEffect(() => {
@@ -20,17 +20,23 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+
+
+    
 
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast.success("Login successful!"); // Success toast
-        navigate(location?.state ? location.state : "/");
+        
+        toast.success("Login successful!"); 
+        // console.log(location);
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 1500);
       })
       .catch((err) => {
-        // Handle wrong email or password error
+        
         setError({ login: "Wrong email or password" });
       });
   };
@@ -38,7 +44,15 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        navigate("/");
+        
+        toast.success("Log-In successful!");
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 1500);
+
+
+       
+        
       })
       .catch((error) => console.log("ERROR", error.message));
   };
@@ -133,6 +147,7 @@ const Login = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
