@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
+  
+  useEffect(() => {
+    document.title = "My Profile | Discount Pro";
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10">

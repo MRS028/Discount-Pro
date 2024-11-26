@@ -1,19 +1,20 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast, ToastContainer } from 'react-toastify'; 
-
+import { toast, ToastContainer } from "react-toastify";
+import { FaEyeSlash } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { createNewUser, user, updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext);
+  const { createNewUser, user, updateUserProfile, setUser, signInWithGoogle } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const [passwordError, setPasswordError] = useState(""); 
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
 
   const validatePassword = (password) => {
-   
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const isLengthValid = password.length >= 6;
@@ -27,7 +28,7 @@ const Register = () => {
     if (!isLengthValid) {
       return "Password must be at least 6 characters long";
     }
-    return ""; 
+    return "";
   };
 
   const handleSubmit = (e) => {
@@ -41,30 +42,32 @@ const Register = () => {
 
     if (passwordValidationError) {
       setPasswordError(passwordValidationError);
-      return; 
+      return;
     }
 
-    setPasswordError(""); 
+    setPasswordError("");
 
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
         updateUserProfile({
-          displayName: name, photoURL: photourl,
-        }).then(() => {
-          toast.success("Registration successful!");
-          navigate(location?.state ? location.state : "/");
-          
-          
-          // Success toast
-          // setTimeout(() => {
-          //   navigate('/'); 
-          // }, 2000); 
-        }).catch((err) => {
-          console.log(err);
-          toast.error("Failed to update profile"); // Error toast if profile update fails
-        });
+          displayName: name,
+          photoURL: photourl,
+        })
+          .then(() => {
+            toast.success("Registration successful!");
+            navigate(location?.state ? location.state : "/");
+
+            // Success toast
+            // setTimeout(() => {
+            //   navigate('/');
+            // }, 2000);
+          })
+          .catch((err) => {
+            console.log(err);
+            toast.error("Failed to update profile"); // Error toast if profile update fails
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -76,14 +79,14 @@ const Register = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then(result => {
+      .then((result) => {
         toast.success("Google Sign-In successful!"); // Success toast
         setTimeout(() => {
-          navigate('/'); // Navigate to home page after delay
+          navigate("/"); // Navigate to home page after delay
         }, 2000); // 2 seconds delay before navigating
       })
-      .catch(error => {
-        console.log('ERROR', error.message);
+      .catch((error) => {
+        console.log("ERROR", error.message);
         toast.error("Google Sign-In failed! Please try again."); // Error toast if Google Sign-In fails
       });
   };
@@ -107,7 +110,7 @@ const Register = () => {
               name="name"
               type="text"
               id="name"
-              required 
+              required
               placeholder="Enter your name"
               className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
@@ -121,7 +124,8 @@ const Register = () => {
             >
               Email
             </label>
-            <input required 
+            <input
+              required
               type="email"
               name="email"
               id="email"
@@ -156,7 +160,8 @@ const Register = () => {
               Password
             </label>
             <div className="relative">
-              <input required 
+              <input
+                required
                 name="password"
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -167,7 +172,7 @@ const Register = () => {
                 className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "🙈" : "👁️"}
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
             {passwordError && (
@@ -190,8 +195,11 @@ const Register = () => {
           <span className="text-sm text-gray-500">Or Register with</span>
           <span className="block w-20 border-t border-gray-300"></span>
         </div>
-        <button onClick={handleGoogleSignIn} className="flex items-center justify-center w-full py-2 mt-4 bg-red-600 text-white font-medium rounded-md hover:bg-red-700">
-          <FaGoogle className="mr-2" /> Register with Google
+        <button
+          onClick={handleGoogleSignIn}
+          className="flex border-2 items-center justify-center w-full py-2 mt-4 bg-transparent  font-medium rounded-md hover:bg-gray-100"
+        >
+          <FcGoogle className="mr-2" /> Register with Google
         </button>
 
         {/* Redirect to Login */}

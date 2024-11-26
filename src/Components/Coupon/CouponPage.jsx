@@ -14,13 +14,12 @@ const CouponPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    
     if (data) {
       setBrand(data);
       setLoading(false);
     } else {
       toast.error("Brand not found!");
-      navigate("/brands"); 
+      navigate("/brands");
     }
   }, [data, navigate, setLoading]);
 

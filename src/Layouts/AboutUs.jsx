@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaJsSquare, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 
 const AboutUs = () => {
+    useEffect(() => {
+        document.title = "About Us | Discount Pro";
+      }, []);
   const experiences = [
     {
       icon: <FaJsSquare className="text-yellow-500 text-4xl mb-4" />,

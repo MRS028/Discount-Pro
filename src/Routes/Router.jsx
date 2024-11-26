@@ -20,20 +20,20 @@ const Router = createBrowserRouter([
     path: "/",
     element: <HomeLayout></HomeLayout>,
     children: [
-      { path: "/", 
-        element: <Home></Home> },
+      { path: "/", element: <Home></Home> },
       {
         path: "/brands",
         element: <BrandsPage></BrandsPage>,
         loader: () => fetch("/coupons.json"),
       },
       {
-        path:"brands/:id",
-        element: <PrivateRoute>
-        <CouponPage></CouponPage>
-      </PrivateRoute>,
+        path: "brands/:id",
+        element: (
+          <PrivateRoute>
+            <CouponPage></CouponPage>
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
-        
           const response = await fetch("/coupons.json");
           const data = await response.json();
 
@@ -43,14 +43,13 @@ const Router = createBrowserRouter([
             throw new Error("Brand not found");
           }
 
-          return brand; 
+          return brand;
         },
-
       },
       {
         path: "/aboutus",
-        element: <AboutUs></AboutUs>
-      }
+        element: <AboutUs></AboutUs>,
+      },
     ],
   },
 

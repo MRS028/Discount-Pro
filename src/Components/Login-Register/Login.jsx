@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   useEffect(() => {
-    document.title = "Login| Discount Pro";
+    document.title = "Login | Discount Pro";
   }, []);
 
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const Login = () => {
         }, 1500);
       })
       .catch((err) => {
-        setError({ login: "Wrong email or password" });
+        setError({ login: "Wrong email or password!" });
       });
   };
 
@@ -90,7 +92,7 @@ const Login = () => {
                 className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? "🙈" : "👁️"}
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
             {error.login && (
@@ -111,7 +113,7 @@ const Login = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700"
+            className="w-full py-2 px-4 bg-green-600 text-white font-medium rounded-md hover:bg-green-700"
           >
             Login
           </button>
@@ -125,9 +127,9 @@ const Login = () => {
         </div>
         <button
           onClick={handleGoogleSignIn}
-          className="flex items-center justify-center w-full py-2 mt-4 bg-red-600 text-white font-medium rounded-md hover:bg-red-700"
+          className="flex border-2 items-center justify-center w-full py-2 mt-4 bg-transparent  font-medium rounded-md hover:bg-gray-100"
         >
-          <FaGoogle className="mr-2" /> Login with Google
+          <FcGoogle className="mr-2" /> Login with Google
         </button>
 
         {/* Redirect to Register */}

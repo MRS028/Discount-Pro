@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaHome, FaInfoCircle, FaTags, FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { FaUserPlus } from 'react-icons/fa';
 
-import logo from "/public/Images/logo.jpg";
+import logo from "/public/Images/Loogo3.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -115,7 +116,7 @@ const NavBar = () => {
             {" "}
             <div className="flex gap-1">
               <img
-                className="w-11 h-11 hidden md:flex rounded-full "
+                className="w-16 h-16 hidden md:flex rounded-full border-2 "
                 src={logo}
                 alt=""
               />
@@ -141,19 +142,19 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white "><IoIosLogOut />
-                  Log out
+                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white ">
+                  Log out <IoIosLogOut size={18} />
                 </button>
               </div>
             ) : (
               <div className="space-x-3">
                 <Link to="/auth/login">
-                  <button className="btn btn-outline"><IoIosLogIn />
+                  <button className="btn btn-outline hover:bg-green-500"><IoIosLogIn size={16} />
                   Login</button>
                 </Link>
                 <Link to="/auth/register">
-                  <button className="btn bg-green-500 text-white font-semibold hover:bg-blue-500">Register</button>
-                </Link>{" "}
+                  <button className="btn bg-green-500 text-white font-semibold hover:bg-green-600 btn-outline"><FaUserPlus size={20} /> Register</button>
+                </Link>
               </div>
             )}
           </div>
@@ -168,14 +169,14 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn btn-neutral"> <IoIosLogOut />
+                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white"> <IoIosLogOut size={20} />
                   Log out
                 </button>
               </div>
             ) : (
               <div className="space-x-3">
                 <Link to="/auth/login">
-                  <button className="btn btn-outline">Login</button>
+                  <button className="btn btn-outline"><IoIosLogIn size={16}/> Login</button>
                 </Link>
               </div>
             )}

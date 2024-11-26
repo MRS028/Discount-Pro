@@ -6,12 +6,13 @@ import slide3 from "../assets/slide3.jpg";
 import slide4 from "../assets/darazs.jpg";
 import slide5 from "../assets/slider5.jpg";
 import slide6 from "../assets/slide6.jpg";
+import slide7 from "../assets/slide7.jpg";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animationClass, setAnimationClass] = useState("animate__fadeIn");
 
-  const slides = [slide6,slide5,slide1, slide2, slide3, slide4];
+  const slides = [slide5,slide7,slide6,slide1, slide2, slide3, slide4];
 
   
   const handleNext = () => {
