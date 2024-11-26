@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 const BrandsPage = () => {
   const brands = useLoaderData();
-  
+
   useEffect(() => {
     document.title = "Brands | Discount Pro";
   }, []);
@@ -27,7 +27,7 @@ const BrandsPage = () => {
       {/* Search Bar */}
       <div className="mb-6 space-y-2">
         <h2 className="font-bold mx-1 text-xl md:text-2xl">
-          Search Your Desire Brand
+          Search Your Desire Brands
         </h2>
         <input
           type="text"

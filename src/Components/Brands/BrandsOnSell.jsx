@@ -5,7 +5,7 @@ const BrandsOnSell = ({ brands }) => {
   const brandsOnSell = brands.filter((brand) => brand.isSaleOn); 
 
   return (
-    <div className="my-10 px-4 md:px-8 lg:px-16">
+    <div className="my-10 px-4 md:px-8 lg:px-8">
      
       <h2 className="text-3xl font-bold text-center mb-6  animate__animated animate__bounce animate__slower">Brands on Sell</h2>
 

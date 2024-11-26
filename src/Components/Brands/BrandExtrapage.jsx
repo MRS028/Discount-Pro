@@ -5,15 +5,13 @@ const BrandExtrapage = ({ brands }) => {
     <div className=" text-center">
       <h2 className="text-3xl font-bold text-center mb-6">Brands Details</h2>
       
-      <div className="flex  flex-wrap gap-8 p-8 text-left">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[95%] mb-5 mx-auto gap-5 text-left">
       {brands.map((brand) => (
         <div
           key={brand._id}
-          className="flex max-w-sm w-full rounded-lg shadow-lg border border-gray-200 p-4"
+          className=" max-w-sm w-full rounded-lg shadow-lg border border-gray-200 p-4"
         >
-          <div className="mr-4">
-           
-          </div>
+          
           <div className="flex flex-col  justify-between">
             <div className="flex gap-1">
             <img

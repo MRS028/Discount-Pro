@@ -72,7 +72,7 @@ const Register = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
         toast.error("Registration failed! Please try again."); // Error toast if registration fails
       });
   };
