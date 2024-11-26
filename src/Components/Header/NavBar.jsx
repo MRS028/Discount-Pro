@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaHome, FaInfoCircle, FaTags, FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import { FaUserPlus } from 'react-icons/fa';
+import { FaUserPlus } from "react-icons/fa";
 
 import logo from "/public/Images/Loogo3.png";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -12,7 +12,8 @@ import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [showMessage, setShowMessage] = useState(true);
-
+  const [toggle, setToggle] = useState(false); // Added toggle state
+  console.log(user);
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowMessage(false);
@@ -20,12 +21,15 @@ const NavBar = () => {
     return () => {
       clearTimeout(timer);
     };
-  },[]);
+  }, []);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        toast.success("Successfully logged out!");
+        setTimeout(() => {
+          toast.success("Successfully logged out!");
+        }, 500);
+        
       })
       .catch((error) => {
         toast.error("Failed to log out. Please try again.");
@@ -70,6 +74,7 @@ const NavBar = () => {
     </>
   );
 
+  
   return (
     <div className="w-full mx-auto text-center">
       {user && user?.email && showMessage ? (
@@ -88,6 +93,7 @@ const NavBar = () => {
               tabIndex={0}
               role="button"
               className="btn btn-ghost flex lg:hidden"
+              onClick={() => setToggle(!toggle)} // Toggle dropdown
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +112,9 @@ const NavBar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${
+                toggle ? "block" : "hidden"
+              }`} // Conditional class rendering
             >
               {link}
             </ul>
@@ -142,18 +150,25 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white ">
+                <button
+                  onClick={handleLogOut}
+                  className="btn bg-red-500 hover:bg-red-300 font-semibold text-white "
+                >
                   Log out <IoIosLogOut size={18} />
                 </button>
               </div>
             ) : (
               <div className="space-x-3">
                 <Link to="/auth/login">
-                  <button className="btn btn-outline hover:bg-green-500"><IoIosLogIn size={16} />
-                  Login</button>
+                  <button className="btn btn-outline hover:bg-green-500">
+                    <IoIosLogIn size={16} />
+                    Login
+                  </button>
                 </Link>
                 <Link to="/auth/register">
-                  <button className="btn bg-green-500 text-white font-semibold hover:bg-green-600 btn-outline"><FaUserPlus size={20} /> Register</button>
+                  <button className="btn bg-green-500 text-white font-semibold hover:bg-green-600 btn-outline">
+                    <FaUserPlus size={20} /> Register
+                  </button>
                 </Link>
               </div>
             )}
@@ -169,14 +184,20 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white"> <IoIosLogOut size={20} />
+                <button
+                  onClick={handleLogOut}
+                  className="btn bg-red-500 hover:bg-red-300 font-semibold text-white"
+                >
+                  <IoIosLogOut size={20} />
                   Log out
                 </button>
               </div>
             ) : (
               <div className="space-x-3">
                 <Link to="/auth/login">
-                  <button className="btn btn-outline"><IoIosLogIn size={16}/> Login</button>
+                  <button className="btn btn-outline">
+                    <IoIosLogIn size={16} /> Login
+                  </button>
                 </Link>
               </div>
             )}
