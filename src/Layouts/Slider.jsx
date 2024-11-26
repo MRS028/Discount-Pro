@@ -47,12 +47,14 @@ const Slider = () => {
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <img
+          
+            <img
             key={index}
             src={slide}
             alt={`Slide ${index + 1}`}
-            className="md:w-full h-[400px] object-cover flex-shrink-0"
+            className="md:w-full h-[420px] rounded-xl  object-cover flex-shrink-0"
           />
+          
         ))}
       </div>
 

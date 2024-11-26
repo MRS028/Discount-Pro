@@ -6,6 +6,7 @@ import logo from "/public/Images/logo.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -140,17 +141,18 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn btn-neutral">
+                <button onClick={handleLogOut} className="btn bg-red-500 hover:bg-red-300 font-semibold text-white "><IoIosLogOut />
                   Log out
                 </button>
               </div>
             ) : (
               <div className="space-x-3">
                 <Link to="/auth/login">
-                  <button className="btn btn-outline">Login</button>
+                  <button className="btn btn-outline"><IoIosLogIn />
+                  Login</button>
                 </Link>
                 <Link to="/auth/register">
-                  <button className="btn btn-primary">Register</button>
+                  <button className="btn bg-green-500 text-white font-semibold hover:bg-blue-500">Register</button>
                 </Link>{" "}
               </div>
             )}
@@ -166,7 +168,7 @@ const NavBar = () => {
                     alt=""
                   />
                 </div>
-                <button onClick={handleLogOut} className="btn btn-neutral">
+                <button onClick={handleLogOut} className="btn btn-neutral"> <IoIosLogOut />
                   Log out
                 </button>
               </div>

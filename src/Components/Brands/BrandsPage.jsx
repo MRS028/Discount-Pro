@@ -22,13 +22,14 @@ const isLoggedIn = true;
       <h1 className="text-4xl font-bold text-center mb-6 animate__animated animate__bounce animate__slower">Brands</h1>
 
       {/* Search Bar */}
-      <div className="mb-6">
+      <div className="mb-6 space-y-2">
+        <h2 className="font-bold mx-1 text-xl md:text-2xl">Search Your Desire Brand</h2>
         <input
           type="text"
           placeholder="Search Brands..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full px-4 py-2 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
 
@@ -37,9 +38,9 @@ const isLoggedIn = true;
         {filteredBrands.map((brand) => (
           <div
             key={brand._id}
-            className="card bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300"
+            className="card bg-white shadow-md border rounded-lg p-6 hover:shadow-lg transition duration-300"
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 ">
               {/* Brand Logo */}
               <img
                 src={brand.brand_logo}

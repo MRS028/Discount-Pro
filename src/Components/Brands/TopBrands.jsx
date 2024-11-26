@@ -7,7 +7,7 @@ const TopBrands = ({ brand }) => {
 
   return (
     <div>
-      <div className="my-10 W-[90%]">
+      <div className="my-5 W-[90%]">
         <h2 className="text-3xl font-bold text-center mb-6 animate__animated animate__bounce animate__slower">Top Brands</h2>
 
         <Marquee pauseOnHover={true} speed={60} gradient={false}>

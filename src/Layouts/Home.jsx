@@ -35,7 +35,7 @@ const Home = () => {
                     <FeaturedBrands brands={brand}></FeaturedBrands>
                 
                     <BrandExtrapage brands={brand}></BrandExtrapage>
-                    <AboutUs></AboutUs>
+                    
                     
                 </main>
             </section>

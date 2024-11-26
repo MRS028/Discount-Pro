@@ -46,7 +46,8 @@ const Router = createBrowserRouter([
           return brand; 
         },
 
-      },{
+      },
+      {
         path: "/aboutus",
         element: <AboutUs></AboutUs>
       }

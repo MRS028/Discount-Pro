@@ -1,7 +1,7 @@
 import React from "react";
 import { FaJsSquare, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 
-const Experience = () => {
+const AboutUs = () => {
   const experiences = [
     {
       icon: <FaJsSquare className="text-yellow-500 text-4xl mb-4" />,
@@ -142,4 +142,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default AboutUs;

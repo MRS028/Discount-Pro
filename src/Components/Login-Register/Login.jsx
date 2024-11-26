@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { toast, ToastContainer } from 'react-toastify'; 
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   useEffect(() => {
@@ -21,22 +21,18 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-
-    
-
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
-        
-        toast.success("Login successful!"); 
+
+        toast.success("Login successful!");
         // console.log(location);
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1500);
       })
       .catch((err) => {
-        
         setError({ login: "Wrong email or password" });
       });
   };
@@ -44,15 +40,10 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        
         toast.success("Log-In successful!");
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1500);
-
-
-       
-        
       })
       .catch((error) => console.log("ERROR", error.message));
   };
@@ -64,7 +55,7 @@ const Login = () => {
           Login
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email Field */}
+         
           <div>
             <label
               htmlFor="email"
@@ -80,7 +71,7 @@ const Login = () => {
             />
           </div>
 
-          {/* Password Field */}
+        
           <div>
             <label
               htmlFor="password"
@@ -107,7 +98,7 @@ const Login = () => {
             )}
           </div>
 
-          {/* Forgot Password */}
+          
           <div className="text-right">
             <Link
               to="/auth/forgetpassword"
