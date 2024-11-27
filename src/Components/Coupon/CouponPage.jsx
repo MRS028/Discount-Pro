@@ -58,7 +58,7 @@ const CouponPage = () => {
                   <span className="font-semibold text-black">Expiry:</span> {coupon.expiry_date}
                 </p>
                 <p className="text-gray-600 mb-4">
-                 <span className="font-semibold text-black">Coupon Code:</span> <span className=""> {coupon.coupon_code}</span>
+                 <span className="font-semibold text-black">Coupon Code:</span> <span className="border-2 p-1 rounded"> {coupon.coupon_code}</span>
                 </p>
 
                 <div className="flex justify-between items-center">
