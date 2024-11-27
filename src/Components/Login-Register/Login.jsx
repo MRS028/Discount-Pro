@@ -28,9 +28,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
 
-        toast.success("Login successful!",{
-          autoClose: 1500, 
-        });
+        toast.success("Login successful!",{autoClose: 1500,});
         // console.log(location);
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
@@ -131,7 +129,7 @@ const Login = () => {
         </div>
         <button
           onClick={handleGoogleSignIn}
-          className="flex border-2 items-center justify-center w-full py-2 mt-4 bg-transparent  font-medium rounded-md hover:bg-gray-100"
+          className="flex border-2 items-center justify-center w-full py-2 mt-4 bg-transparent  font-medium rounded-md hover:bg-gray-200"
         >
           <FcGoogle className="mr-2" /> Login with Google
         </button>

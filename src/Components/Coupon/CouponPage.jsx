@@ -54,8 +54,11 @@ const CouponPage = () => {
               >
                 <h2 className="text-xl font-bold mb-2">{coupon.description}</h2>
                 <p className="text-gray-600 mb-2">{coupon.condition}</p>
-                <p className="text-gray-500 mb-4">
-                  Expiry: {coupon.expiry_date}
+                <p className="text-gray-600 mb-4">
+                  <span className="font-semibold text-black">Expiry:</span> {coupon.expiry_date}
+                </p>
+                <p className="text-gray-600 mb-4">
+                 <span className="font-semibold text-black">Coupon Code:</span> <span className=""> {coupon.coupon_code}</span>
                 </p>
 
                 <div className="flex justify-between items-center">
@@ -63,14 +66,14 @@ const CouponPage = () => {
                     text={coupon.coupon_code}
                     onCopy={() => handleCopy(coupon.coupon_code)}
                   >
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                    <button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">
                       Copy Code
                     </button>
                   </CopyToClipboard>
 
                   <button
-                    onClick={() => window.open(brand.shop_Link, "_blank")}
-                    className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300"
+                    onClick={() => {window.open(brand.shop_Link, "_blank")}}
+                    className="border-2 text-gray-800 py-2 px-4 rounded-lg hover:bg-base-300 transition duration-300"
                   >
                     Use Now
                   </button>

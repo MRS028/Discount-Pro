@@ -1,52 +1,25 @@
 import React, { useEffect } from 'react';
 
 const ErrorPage = () => {
-
   useEffect(() => {
     document.title = "ERROR 404";
   }, []);
+
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Oops! Something Went Wrong.</h1>
-      <p style={styles.message}>We couldn't find the page you were looking for.</p>
-      <button 
-        style={styles.button} 
-        onClick={() => window.location.href = '/'} 
+    <div className="flex flex-col items-center justify-center h-screen bg-base-200 text-red-800 text-center">
+      <img className='w-40 h-40' src="https://cdn-icons-png.flaticon.com/512/6261/6261498.png" alt="" />
+      <h1 className="text-4xl font-bold mb-4">Oops! Something Went Wrong.</h1>
+      <p className="text-lg mb-6 px-5">
+        We couldn't find the page you were looking for.
+      </p>
+      <button
+        className="px-6 py-2 text-white bg-green-600 hover:bg-green-700 rounded-lg"
+        onClick={() => (window.location.href = '/')}
       >
         Go to Home
       </button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f8d7da',
-    color: '#721c24',
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: '3rem',
-    fontWeight: 'bold',
-  },
-  message: {
-    fontSize: '1.5rem',
-    marginBottom: '20px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '1rem',
-    color: 'white',
-    backgroundColor: '#28a745',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
 };
 
 export default ErrorPage;

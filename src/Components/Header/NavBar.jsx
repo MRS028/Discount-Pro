@@ -13,15 +13,15 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [showMessage, setShowMessage] = useState(true);
   const [toggle, setToggle] = useState(false); 
-  console.log(user);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowMessage(false);
-    }, 10000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  // console.log(user);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowMessage(false);
+  //   }, 10000);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
 
   const handleLogOut = () => {
     logOut()
@@ -76,11 +76,12 @@ const NavBar = () => {
     </>
   );
 
+  // && showMessage 
   
   return (
     <div className="w-full mx-auto text-center">
-      {user && user?.email && showMessage ? (
-        <p className="font-semibold text-xl text-blue-500">
+      {user && user?.email ? (
+        <p className="font-semibold text-2xl text-blue-500">
           Welcome, {user.displayName}!
         </p>
       ) : (
@@ -154,7 +155,7 @@ const NavBar = () => {
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className="btn bg-red-500 hover:bg-red-300 font-semibold text-white "
+                  className="btn bg-red-500 hover:bg-red-700 font-semibold text-white "
                 >
                   Log out <IoIosLogOut size={18} />
                 </button>
@@ -188,7 +189,7 @@ const NavBar = () => {
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className="btn bg-red-500 hover:bg-red-300 font-semibold text-white"
+                  className="btn bg-red-500 hover:bg-red-700 font-semibold text-white"
                 >
                   <IoIosLogOut size={20} />
                   Log out

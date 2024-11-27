@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getAuth, sendPasswordResetEmail, signOut } from "firebase/auth";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ForgetPassword = () => {
@@ -9,19 +9,24 @@ const ForgetPassword = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState(location.state?.email || "");
-
   const handleResetPassword = (e) => {
     e.preventDefault();
     if (!email) {
+      toast.error("Please enter an email address.");
+      return;
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
       toast.error("Please enter a valid email address.");
       return;
     }
-
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        toast.success("Password reset email sent! Please check your email.");
+        toast.success("Password reset email sent! Please check your email." ,{autoClose: 1000,});
         signOut(auth).then(() => {
-          navigate("/auth/login"); // Redirect to login
+          setTimeout(() => {
+            navigate("/auth/login");
+          }, 1200);
         });
       })
       .catch((error) => {
@@ -37,12 +42,15 @@ const ForgetPassword = () => {
           Forgot Password
         </h2>
         <p className="text-sm text-gray-500 text-center mb-4">
-          Enter your email address and we will send you a link to reset your password.
+          Enter your email address and we will send you a link to reset your
+          password.
         </p>
         <form onSubmit={handleResetPassword} className="space-y-4">
-          {/* Email Input */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -55,16 +63,13 @@ const ForgetPassword = () => {
             />
           </div>
 
-          {/* Reset Password Button */}
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700"
+            className="w-full py-2 px-4 bg-green-600 text-white font-medium rounded-md hover:bg-green-700"
           >
             Send Reset Link
           </button>
         </form>
-
-        {/* Back to Login */}
         <p className="text-sm text-center text-gray-500 mt-6">
           Remembered your password?{" "}
           <span
@@ -75,6 +80,7 @@ const ForgetPassword = () => {
           </span>
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };
