@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { FaJsSquare, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { Link, Links } from "react-router-dom";
 
 const AboutUs = () => {
     useEffect(() => {
-        document.title = "About Us | Discount Pro";
+        document.title = "About Dev | Discount Pro";
       }, []);
   const experiences = [
     {
@@ -83,7 +84,7 @@ const AboutUs = () => {
           <div className="border rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Discount Pro</h3>
             <h3 className="text-xl font-bold text-blue-500">
-              <a href="">Live Link</a>
+              <Link className="hover:underline" href="">Live Link</Link>
             </h3>
 
             <p className="text-gray-600 leading-7 mt-2  opacity-85">
@@ -99,8 +100,8 @@ const AboutUs = () => {
               Dream Leauge Cricket
             </h3>
             <h3 className="text-xl font-bold text-blue-500">
-              {" "}
-              <a href="https://bpl-dream-leauge-xi.netlify.app/">Live Link</a>
+             
+              <Link className="hover:underline" href="">Live Link</Link>
             </h3>
             <p className="text-gray-600 opacity-85 leading-7 mt-2">
               BPL Dream Xi Cricket Team Builder is a React application that
@@ -113,7 +114,7 @@ const AboutUs = () => {
           <div className="border rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Adopt Your Pet</h3>
             <h3 className="text-xl font-bold text-blue-500">
-              <a href="https://mrs028.github.io/Adopt-Your-Pet/">Live Link</a>
+              <Link className="hover:underline" href="">Live Link</Link>
             </h3>
 
             <p className="text-gray-600 leading-7 mt-2  opacity-85">
@@ -127,8 +128,8 @@ const AboutUs = () => {
           <div className="border rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Gadget Heaven</h3>
             <h3 className="text-xl font-bold text-blue-500">
-              {" "}
-              <a href="https://dream-gadget-bd.netlify.app/">Live Link</a>
+              
+              <Link className="hover:underline" href="">Live Link</Link>
             </h3>
 
             <p className="text-gray-600 leading-7 mt-2 opacity-85">

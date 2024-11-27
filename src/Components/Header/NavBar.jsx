@@ -12,7 +12,7 @@ import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [showMessage, setShowMessage] = useState(true);
-  const [toggle, setToggle] = useState(false); // Added toggle state
+  const [toggle, setToggle] = useState(false); 
   console.log(user);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,7 +27,9 @@ const NavBar = () => {
     logOut()
       .then(() => {
         setTimeout(() => {
-          toast.success("Successfully logged out!");
+          toast.success("Successfully logged out!", {
+            autoClose: 1500, 
+          });
         }, 500);
         
       })
@@ -93,7 +95,7 @@ const NavBar = () => {
               tabIndex={0}
               role="button"
               className="btn btn-ghost flex lg:hidden"
-              onClick={() => setToggle(!toggle)} // Toggle dropdown
+              onClick={() => setToggle(!toggle)} 
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +116,7 @@ const NavBar = () => {
               tabIndex={0}
               className={`menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ${
                 toggle ? "block" : "hidden"
-              }`} // Conditional class rendering
+              }`} 
             >
               {link}
             </ul>

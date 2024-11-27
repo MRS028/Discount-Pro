@@ -28,7 +28,9 @@ const Login = () => {
         const user = result.user;
         setUser(user);
 
-        toast.success("Login successful!");
+        toast.success("Login successful!",{
+          autoClose: 1500, 
+        });
         // console.log(location);
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
@@ -42,7 +44,9 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        toast.success("Log-In successful!");
+        toast.success("Log-In successful!",{
+          autoClose: 1500, 
+        });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1500);

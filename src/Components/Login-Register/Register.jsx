@@ -56,38 +56,39 @@ const Register = () => {
           photoURL: photourl,
         })
           .then(() => {
-            toast.success("Registration successful!");
+            toast.success("Registration successful!",{
+              autoClose: 1500, 
+            });
             navigate(location?.state ? location.state : "/");
 
-            // Success toast
-            // setTimeout(() => {
-            //   navigate('/');
-            // }, 2000);
+            
           })
           .catch((err) => {
             console.log(err);
-            toast.error("Failed to update profile"); // Error toast if profile update fails
+            toast.error("Failed to update profile"); 
           });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(errorCode, errorMessage);
-        toast.error("Registration failed! Please try again."); // Error toast if registration fails
+        toast.error("Registration failed! Please try again."); 
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        toast.success("Google Sign-In successful!"); // Success toast
+        toast.success("Google Sign-In successful!",{
+          autoClose: 1500, 
+        }); // Success toast
         setTimeout(() => {
-          navigate("/"); // Navigate to home page after delay
-        }, 2000); // 2 seconds delay before navigating
+          navigate("/"); 
+        }, 2000);
       })
       .catch((error) => {
         console.log("ERROR", error.message);
-        toast.error("Google Sign-In failed! Please try again."); // Error toast if Google Sign-In fails
+        toast.error("Google Sign-In failed! Please try again."); 
       });
   };
 

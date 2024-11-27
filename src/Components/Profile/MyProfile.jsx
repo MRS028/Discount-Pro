@@ -11,12 +11,12 @@ const MyProfile = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10">
-      {/* Cover Section */}
+
       <div className="w-full  flex items-center justify-center">
         <h1 className="text-4xl font-extrabold ">Welcome, {user?.displayName || "User"}!</h1>
       </div>
 
-      {/* Profile Card */}
+     
       <div className="mt-10 bg-white shadow-2xl rounded-lg p-8 w-full max-w-xl border border-gray-200">
         <div className="flex flex-col items-center space-y-6">
           <div className="w-32 h-32 border-4 border-white rounded-full overflow-hidden shadow-lg">
@@ -30,7 +30,7 @@ const MyProfile = () => {
           <p className="text-xl font-bold text-gray-500">{user?.email}</p>
         </div>
 
-        {/* Update Button */}
+       
         <div className="mt-8">
           <Link
             to="/auth/my-profile/update-profile"
