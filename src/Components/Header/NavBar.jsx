@@ -14,14 +14,14 @@ const NavBar = () => {
   const [showMessage, setShowMessage] = useState(true);
   const [toggle, setToggle] = useState(false); 
   // console.log(user);
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowMessage(false);
-  //   }, 10000);
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessage(false);
+    }, 5000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const handleLogOut = () => {
     logOut()
@@ -76,11 +76,11 @@ const NavBar = () => {
     </>
   );
 
-  // && showMessage 
+   
   
   return (
     <div className="w-full mx-auto text-center">
-      {user && user?.email ? (
+      {user && user?.email && showMessage ? (
         <p className="font-semibold text-2xl text-blue-500">
           Welcome, {user.displayName}!
         </p>

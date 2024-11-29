@@ -84,7 +84,7 @@ const AboutUs = () => {
           <div className="border rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Discount Pro</h3>
             <h3 className="text-xl font-bold text-blue-500">
-              <Link className="hover:underline" href=" https://discount-pro-92bb4.firebaseapp.com/ ">Live Link</Link>
+              <Link > <a className="hover:underline" href="https://discount-pro-92bb4.firebaseapp.com/ ">Live Link</a></Link>
             </h3>
 
             <p className="text-gray-600 leading-7 text-justify mt-2  opacity-85">
@@ -101,7 +101,7 @@ const AboutUs = () => {
             </h3>
             <h3 className="text-xl font-bold text-blue-500">
              
-              <Link className="hover:underline" href=" https://bpl-dream-leauge-xi.netlify.app/ ">Live Link</Link>
+              <a className="hover:underline" href="https://bpl-dream-leauge-xi.netlify.app/"  target="_blank" rel="noopener noreferrer">Live Link</a>
             </h3>
             <p className="text-gray-600 text-justify opacity-85 leading-7 mt-2">
               BPL Dream Xi Cricket Team Builder is a React application that
@@ -114,7 +114,7 @@ const AboutUs = () => {
           <div className="border rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold text-gray-800">Adopt Your Pet</h3>
             <h3 className="text-xl font-bold text-blue-500">
-              <Link className="hover:underline" href=" https://mrs028.github.io/Adopt-Your-Pet/">Live Link</Link>
+              <a className="hover:underline" href="https://mrs028.github.io/Adopt-Your-Pet/" target="_blank" rel="noopener noreferrer">Live Link</a>
             </h3>
 
             <p className="text-gray-600 text-justify leading-7 mt-2  opacity-85">
@@ -129,7 +129,7 @@ const AboutUs = () => {
             <h3 className="text-xl font-bold text-gray-800">Gadget Heaven</h3>
             <h3 className="text-xl font-bold text-blue-500">
               
-              <Link className="hover:underline" href=" https://dream-gadget-bd.netlify.app/">Live Link</Link>
+              <a className="hover:underline" href="https://dream-gadget-bd.netlify.app/" target="_blank" rel="noopener noreferrer">Live Link</a>
             </h3>
 
             <p className="text-gray-600 text-justify leading-7 mt-2 opacity-85">
