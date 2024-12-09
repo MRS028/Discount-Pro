@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaHome, FaInfoCircle, FaTags, FaUserCircle } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaUserPlus } from "react-icons/fa";
 
 import logo from "/public/Images/Loogo3.png";
@@ -8,11 +8,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [showMessage, setShowMessage] = useState(true);
   const [toggle, setToggle] = useState(false); 
+  const navigate = useNavigate();
   // console.log(user);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,13 +26,23 @@ const NavBar = () => {
   }, []);
 
   const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        setTimeout(() => {
-          toast.success("Successfully logged out!", {
-            autoClose: 1500, 
-          });
-        }, 500);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "Cancel",
+      reverseButtons: true,
+      customClass: {
+        confirmButton: "bg-red-600 text-white hover:bg-red-700",
+        cancelButton: "bg-gray-400 text-white hover:bg-gray-500",
+      },
+    }).then((result) => {
+       if(result.isConfirmed){
+        logOut();
+        navigate("/");
+       }
         
       })
       .catch((error) => {
@@ -144,7 +156,7 @@ const NavBar = () => {
             {user && user?.email ? (
               <div className="flex space-x-2">
                 <p className=" font-semibold text-xl py-2">
-                  {user && user.email}
+                  {user && user.displayName}
                 </p>
                 <div className="py-1">
                   <img

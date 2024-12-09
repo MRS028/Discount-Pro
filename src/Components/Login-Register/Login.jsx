@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 const Login = () => {
   useEffect(() => {
@@ -28,7 +29,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast.success("Login successful!", { autoClose: 1500 });
+        Swal.fire({
+          title: "Welcome Back!",
+          text: "You have successfully logged in.",
+          icon: "success",
+          confirmButtonText: "Okay",
+          timer: 2000, // Auto-close after 2 seconds
+          timerProgressBar: true,
+        });
 
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
@@ -42,7 +50,14 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        toast.success("Log-In successful!", { autoClose: 1500 });
+        Swal.fire({
+          title: "Welcome Back!",
+          text: "You have successfully logged in.",
+          icon: "success",
+          confirmButtonText: "Okay",
+          timer: 2000, // Auto-close after 2 seconds
+          timerProgressBar: true,
+        });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 1500);

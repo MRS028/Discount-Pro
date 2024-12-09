@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createNewUser, user, updateUserProfile, setUser, signInWithGoogle } =
@@ -79,16 +80,26 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        toast.success("Google Sign-In successful!",{
-          autoClose: 1500, 
-        }); // Success toast
-        setTimeout(() => {
-          navigate("/"); 
-        }, 2000);
+        Swal.fire({
+          title: "Registration Successful!",
+          text: "Welcome to Chill Gamer!",
+          icon: "success",
+          showConfirmButton: false,
+          timer: 1000,
+          timerProgressBar: true,
+        });
+        // Success toast
+        navigate("/");
       })
       .catch((error) => {
         console.log("ERROR", error.message);
-        toast.error("Google Sign-In failed! Please try again."); 
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Invalid email or password. Please try again.",
+          confirmButtonText: "Retry",
+          confirmButtonColor: "#d33",
+        }); 
       });
   };
 
