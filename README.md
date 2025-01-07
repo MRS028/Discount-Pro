@@ -1,4 +1,4 @@
-## Overview
+## Discount Pro
 **DiscountPro** is an innovative platform that simplifies the way businesses and customers interact with discount offers. This project is designed to create a seamless experience for users who are searching for exclusive deals and for businesses aiming to promote their products or services effectively. 
 
 At its core, DiscountPro functions as a sleek, interactive, and fully responsive web application that focuses on usability, aesthetic appeal, and modern technologies. 
