@@ -44,7 +44,7 @@ const Slider = () => {
   return (
     <div className="relative w-full overflow-hidden bg-gray-100">
       <div
-        className={`flex transition-transform duration-700 ease-in-out animate__animated ${animationClass}`}
+        className={`flex w-full h-[280px]  md:h-[420px] transition-transform duration-700 ease-in-out animate__animated ${animationClass}`}
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
@@ -53,7 +53,7 @@ const Slider = () => {
             key={index}
             src={slide}
             alt={`Slide ${index + 1}`}
-            className="md:w-full h-[420px] rounded-xl  object-cover flex-shrink-0"
+            className="w-full h-full rounded-xl flex-shrink-0"
           />
           
         ))}
